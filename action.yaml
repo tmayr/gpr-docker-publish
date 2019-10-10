@@ -1,4 +1,4 @@
-name: 'gpr-docker-publish'
+name: "gpr-docker-publish"
 description: Publish a Docker image to GitHub Package Registry
 author: Hamel Husain
 inputs:
@@ -14,7 +14,7 @@ inputs:
   build_context:
     description: the path in your repo that will serve as the build context
     require: true
-    default: './'
+    default: "./"
   dockerfile_path:
     description: the full path (including the filename) to the dockerfile that you want to build
     require: true
@@ -23,14 +23,20 @@ inputs:
     description: attempt to use last image as the cache
     require: false
     default: false
+  tag_name:
+    description: the tag to use for your image
+    require: false
+  build_args:
+    description: build arguments to use
+    require: false
 outputs:
   IMAGE_SHA_NAME:
     description: name of the Docker Image including the tag
   IMAGE_URL:
-    description: the URL where you can view the hosted image on GitHub. 
+    description: the URL where you can view the hosted image on GitHub.
 branding:
-  color: 'purple'
-  icon: 'layers'
+  color: "purple"
+  icon: "layers"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
